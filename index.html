@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buffet Catering Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-700 pt-16">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white shadow z-10">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-xl font-bold">Buffet Catering</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#home" class="hover:text-gray-600">Home</a></li>
+          <li><a href="#concept" class="hover:text-gray-600">Concept</a></li>
+          <li><a href="#features" class="hover:text-gray-600">Features</a></li>
+          <li><a href="#plans" class="hover:text-gray-600">Plans</a></li>
+          <li><a href="#gallery" class="hover:text-gray-600">Gallery</a></li>
+          <li><a href="#access" class="hover:text-gray-600">Access</a></li>
+          <li><a href="#contact" class="hover:text-gray-600">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80');">
+    <div class="bg-black bg-opacity-50 p-8 rounded">
+      <h2 class="text-white text-4xl md:text-5xl font-bold text-center">Delicious Buffet Experience</h2>
+    </div>
+  </section>
+
+  <!-- Language Toggle -->
+  <div class="container mx-auto mt-8 flex justify-center space-x-4">
+    <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="en">EN</button>
+    <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="jp">JP</button>
+    <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="vi">VI</button>
+  </div>
+
+  <!-- Content -->
+  <main class="space-y-16 container mx-auto px-4 py-8">
+    <section id="concept" class="text-center space-y-4">
+      <h3 class="text-3xl font-semibold">Concept</h3>
+      <p class="lang en">Enjoy a variety of dishes carefully prepared with seasonal ingredients.</p>
+      <p class="lang jp hidden">季節の食材を使った多彩な料理をお楽しみください。</p>
+      <p class="lang vi hidden">Thưởng thức nhiều món ăn ngon được chế biến từ nguyên liệu theo mùa.</p>
+    </section>
+
+    <section id="features" class="grid gap-8 md:grid-cols-3 text-center">
+      <div class="space-y-2">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+        <h4 class="text-xl font-medium">Easy Order</h4>
+        <p class="lang en">Simply select your favorite menu and date.</p>
+        <p class="lang jp hidden">お好きなメニューと日程を選ぶだけ。</p>
+        <p class="lang vi hidden">Chỉ cần chọn thực đơn và ngày bạn muốn.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://images.unsplash.com/photo-1514512747704-4a0b8f58e8cb?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+        <h4 class="text-xl font-medium">Full Service</h4>
+        <p class="lang en">We handle setup and cleanup so you can relax.</p>
+        <p class="lang jp hidden">準備から後片付けまでお任せください。</p>
+        <p class="lang vi hidden">Chúng tôi lo toàn bộ từ chuẩn bị đến dọn dẹp.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://images.unsplash.com/photo-1498579809087-ef1e558fd1d2?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+        <h4 class="text-xl font-medium">Fresh Taste</h4>
+        <p class="lang en">Fresh ingredients create memorable events.</p>
+        <p class="lang jp hidden">新鮮な食材で思い出に残るひとときを。</p>
+        <p class="lang vi hidden">Nguyên liệu tươi ngon tạo nên buổi tiệc khó quên.</p>
+      </div>
+    </section>
+
+    <section id="plans" class="text-center space-y-8">
+      <h3 class="text-3xl font-semibold">Plans</h3>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="space-y-2 p-4 border rounded">
+          <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+          <h4 class="text-xl font-medium">Standard Plan</h4>
+          <p class="lang en">Great for casual parties.</p>
+          <p class="lang jp hidden">気軽なパーティに最適。</p>
+          <p class="lang vi hidden">Phù hợp cho bữa tiệc nhẹ.</p>
+        </div>
+        <div class="space-y-2 p-4 border rounded">
+          <img src="https://images.unsplash.com/photo-1519895609939-d2a8b1347c7b?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+          <h4 class="text-xl font-medium">Premium Plan</h4>
+          <p class="lang en">Upgrade for special occasions.</p>
+          <p class="lang jp hidden">特別な日にアップグレード。</p>
+          <p class="lang vi hidden">Nâng tầm cho dịp đặc biệt.</p>
+        </div>
+        <div class="space-y-2 p-4 border rounded">
+          <img src="https://images.unsplash.com/photo-1529692236671-f1c4ebd45937?auto=format&fit=crop&w=480&q=80" class="mx-auto rounded" alt="">
+          <h4 class="text-xl font-medium">Deluxe Plan</h4>
+          <p class="lang en">Best choice for big events.</p>
+          <p class="lang jp hidden">大規模イベントに最適。</p>
+          <p class="lang vi hidden">Tuyệt vời cho sự kiện lớn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="space-y-8 text-center">
+      <h3 class="text-3xl font-semibold">Gallery</h3>
+      <div class="grid gap-4 grid-cols-2 md:grid-cols-4">
+        <img src="https://images.unsplash.com/photo-1519889444273-64a9abc3b9b1?auto=format&fit=crop&w=480&q=80" class="rounded" alt="">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=480&q=80" class="rounded" alt="">
+        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=480&q=80" class="rounded" alt="">
+        <img src="https://images.unsplash.com/photo-1532634726-8b9fb99825a9?auto=format&fit=crop&w=480&q=80" class="rounded" alt="">
+      </div>
+    </section>
+
+    <section id="access" class="text-center space-y-4">
+      <h3 class="text-3xl font-semibold">Access</h3>
+      <p class="lang en">Located just five minutes from the station.</p>
+      <p class="lang jp hidden">駅から徒歩5分の好立地です。</p>
+      <p class="lang vi hidden">Cách ga tàu chỉ 5 phút đi bộ.</p>
+      <img src="https://images.unsplash.com/photo-1521540216272-a50305cd4421?auto=format&fit=crop&w=800&q=80" class="mx-auto rounded" alt="Map">
+    </section>
+
+    <section id="contact" class="text-center space-y-4">
+      <h3 class="text-3xl font-semibold">Contact</h3>
+      <p class="lang en">Feel free to reach out with inquiries.</p>
+      <p class="lang jp hidden">お問い合わせはお気軽にご連絡ください。</p>
+      <p class="lang vi hidden">Hãy liên hệ với chúng tôi nếu có thắc mắc.</p>
+      <a href="mailto:info@buffet-catering.com" class="inline-block mt-2 px-6 py-3 bg-gray-800 text-white rounded">info@buffet-catering.com</a>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 text-center py-4">
+    <p>&copy; 2024 Buffet Catering</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.lang-btn');
+    const texts = document.querySelectorAll('.lang');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        buttons.forEach(b => b.classList.remove('bg-gray-800', 'text-white'));
+        btn.classList.add('bg-gray-800', 'text-white');
+        texts.forEach(t => {
+          t.classList.toggle('hidden', !t.classList.contains(lang));
+        });
+      });
+    });
+  </script>
+</body>
+</html>
