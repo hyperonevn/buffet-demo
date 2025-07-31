@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffet Catering Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans pt-16 leading-normal tracking-normal">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white shadow z-10">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <h1 class="text-xl font-bold">Buffet Catering</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-600">Home</a></li>
+                    <li><a href="#concept" class="hover:text-gray-600">Concept</a></li>
+                    <li><a href="#plan" class="hover:text-gray-600">Plan</a></li>
+                    <li><a href="#access" class="hover:text-gray-600">Access</a></li>
+                    <li><a href="#contact" class="hover:text-gray-600">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="h-screen bg-cover bg-center flex items-center justify-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80');">
+        <div class="bg-black bg-opacity-50 p-8 rounded">
+            <h2 class="text-white text-4xl md:text-5xl font-bold text-center">Delicious Buffet Experience</h2>
+        </div>
+    </section>
+
+    <!-- Language Toggle -->
+    <div class="container mx-auto mt-8 flex justify-center space-x-4">
+        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="en">EN</button>
+        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="jp">JP</button>
+        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="vi">VI</button>
+    </div>
+
+    <!-- Content Sections -->
+    <main id="content" class="container mx-auto px-4 py-8 space-y-12">
+        <section id="concept" class="text-center space-y-4">
+            <h3 class="text-2xl font-semibold">Concept</h3>
+            <p class="lang en">Enjoy a variety of dishes carefully prepared with seasonal ingredients.</p>
+            <p class="lang jp hidden">季節の食材を使った多彩な料理をお楽しみください。</p>
+            <p class="lang vi hidden">Thưởng thức nhiều món ăn ngon được chế biến từ nguyên liệu theo mùa.</p>
+        </section>
+
+        <section id="plan" class="text-center space-y-4">
+            <h3 class="text-2xl font-semibold">Plan</h3>
+            <p class="lang en">Choose from affordable plans tailored for any event.</p>
+            <p class="lang jp hidden">様々なイベントに合わせたお得なプランをご用意しています。</p>
+            <p class="lang vi hidden">Chọn những gói ưu đãi phù hợp với mọi sự kiện.</p>
+        </section>
+
+        <section id="access" class="text-center space-y-4">
+            <h3 class="text-2xl font-semibold">Access</h3>
+            <p class="lang en">Located just five minutes from the station.</p>
+            <p class="lang jp hidden">駅から徒歩5分の好立地です。</p>
+            <p class="lang vi hidden">Cách ga tàu chỉ 5 phút đi bộ.</p>
+        </section>
+
+        <section id="contact" class="text-center space-y-4">
+            <h3 class="text-2xl font-semibold">Contact</h3>
+            <p class="lang en">Feel free to reach out with inquiries.</p>
+            <p class="lang jp hidden">お問い合わせはお気軽にご連絡ください。</p>
+            <p class="lang vi hidden">Hãy liên hệ với chúng tôi nếu có thắc mắc.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-center py-4">
+        <p>&copy; 2024 Buffet Catering</p>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('.lang-btn');
+        const texts = document.querySelectorAll('.lang');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                texts.forEach(t => {
+                    if (t.classList.contains(lang)) {
+                        t.classList.remove('hidden');
+                    } else {
+                        t.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
