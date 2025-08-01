@@ -1,20 +1,149 @@
-<body>
-  <div id="sidebar"></div>
-  <div id="topbar"></div>
-  <main>
-    <div id="hero"></div>
-    <div id="contact-bar"></div>
-  </main>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buffet Clone – MrBuffet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Yu Gothic', '游ゴシック', sans-serif;
+        font-size: 14px;
+      }
+    </style>
+  </head>
 
-  <script>
-    const loadHTML = async (id, file) => {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    };
-    loadHTML("sidebar", "partials/sidebar.html");
-    loadHTML("topbar", "partials/topbar.html");
-    loadHTML("hero", "partials/hero.html");
-    loadHTML("contact-bar", "partials/contact-bar.html");
-  </script>
-</body>
+  <body class="text-gray-800">
+    <!-- ✅ Sidebar -->
+    <aside class="fixed top-0 left-0 w-[240px] h-screen bg-[#5d4a3d] text-white flex flex-col justify-between p-5 z-50 overflow-y-auto">
+      <!-- Logo -->
+      <div class="text-center mb-6">
+        <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/logo_kansai.png" alt="Mr.BUFFET logo" class="mx-auto" />
+      </div>
+
+      <!-- Menu blocks -->
+      <nav class="space-y-6 text-sm font-bold">
+        <div class="text-center">
+          <p class="text-[15px] mb-1">ケータリングメニュー</p>
+        </div>
+        <hr class="border-dashed border-t border-white mx-6" />
+
+        <div class="text-center">
+          <p class="text-[15px] leading-snug">オードブル<br />デリバリーメニュー</p>
+        </div>
+        <hr class="border-dashed border-t border-white mx-6" />
+
+        <div class="text-center">
+          <p class="text-[15px]">予算から選ぶ</p>
+        </div>
+        <hr class="border-dashed border-t border-white mx-6" />
+
+        <div class="text-center">
+          <p class="text-[15px]">シーンから選ぶ</p>
+        </div>
+      </nav>
+
+      <!-- Contact info -->
+      <div class="mt-10 text-center text-white text-sm">
+      <p class="mb-2 whitespace-nowrap">お気軽にご相談・お電話ください</p>
+
+        <p class="text-xl font-bold tracking-widest my-1">0120-846-413</p>
+        <p>営業時間 09:00~21:00</p>
+      </div>
+
+      <!-- Contact button -->
+      <div class="mt-6 mb-6 text-center">
+        <div class="bg-white text-[#5d4a3d] rounded-md p-4 mx-auto w-[200px] shadow-md text-sm font-bold">
+          <div class="flex items-center justify-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M2 4v16h20V4H2zm18 2v.511l-8 5.333-8-5.333V6h16zM4 18V8.344l7.385 4.923a1 1 0 001.23 0L20 8.344V18H4z"/></svg>
+            <span>お問い合わせ<br />ご注文はこちら</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner dưới cùng -->
+      <div class="text-center space-y-4">
+        <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/deff_banner.jpg" alt="バナー" class="w-full rounded" />
+        <div class="text-center text-white text-xs opacity-70">
+          <svg class="mx-auto w-10 h-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <path d="M32 4a6 6 0 100 12 6 6 0 000-12zM16 24h32l-4 28H20z"/>
+          </svg>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ✅ Top notice -->
+    <div class="fixed top-0 left-[240px] w-[calc(100%-240px)] bg-[#2e261c] text-white text-[12.5px] text-center py-1 z-[99999]">
+      ホーチミンでケータリング・オードブルデリバリーなら
+      <strong class="font-medium">MrBuffet</strong>～ミスタービュッフェ～
+    </div>
+
+    <!-- ✅ Navigation bar -->
+    <!-- ✅ Navigation bar -->
+    <nav class="fixed top-[32px] left-[240px] w-[calc(100%-240px)] bg-white border-b border-gray-200 flex items-center justify-between text-[15px] font-bold z-[9999] py-2 px-4">
+      <div class="space-x-2">
+        <a href="/about" class="text-gray-800 hover:text-black">私たちについて</a>｜
+        <a href="/area" class="text-gray-800 hover:text-black">対応エリア</a>｜
+        <a href="/guide" class="text-gray-800 hover:text-black">ご利用ガイド</a>｜
+        <a href="/faq" class="text-gray-800 hover:text-black">よくある質問</a>
+      </div>
+      <div class="space-x-2 text-sm">
+        <a href="index.html" title="日本語">🇯🇵</a>
+        <a href="index.vi.html" title="Tiếng Việt">🇻🇳</a>
+        <a href="index.en.html" title="English">🇬🇧</a>
+      </div>
+    </nav>
+
+    <!-- ✅ Main content -->
+    <main class="ml-[240px] mt-[80px] px-0 py-0 relative z-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 relative">
+        <!-- Slide 1 -->
+        <section
+          class="relative h-[500px] bg-cover bg-center"
+          style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv1.jpg');"
+        >
+          <!-- PNG chữ: góc trái trên -->
+          <img
+            src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/cateling/mv_txt.png"
+            alt="Catering Text"
+            class="absolute top-6 left-6 w-[260px] md:w-[300px] z-20"
+          />
+          <!-- Loang trắng góc TRÁI TRÊN -->
+          <div class="absolute top-0 left-0 w-[300px] h-[140px] bg-gradient-to-br from-white via-white/80 to-transparent z-10"></div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section
+          class="relative h-[500px] bg-cover bg-center"
+          style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv2.jpg');"
+        >
+          <!-- PNG chữ: góc phải dưới -->
+          <img
+            src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/delivery/mv_txt.png"
+            alt="Delivery Text"
+            class="absolute bottom-6 right-6 w-[260px] md:w-[300px] z-20"
+          />
+          <!-- Loang trắng góc PHẢI DƯỚI -->
+          <div class="absolute bottom-0 right-0 w-[300px] h-[140px] bg-gradient-to-tl from-white via-white/80 to-transparent z-10"></div>
+        </section>
+
+        <!-- ✅ Chữ phủ chính giữa -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-center leading-relaxed hidden md:block">
+          <p class="inline-block text-white text-[20px] md:text-[24px] font-bold bg-[#5d4a3d] px-6 py-2 mb-2 rounded-md shadow-md">
+            オシャレで旨い。
+          </p>
+          <br />
+          <p class="inline-block text-white text-[20px] md:text-[24px] font-bold bg-[#6e774f] px-6 py-2 rounded-md shadow-md">
+            心が躍る出張ビュッフェ専門店
+          </p>
+        </div>
+      </div>
+
+      <!-- ✅ Highlight box -->
+      <div class="bg-[#fffaf0] py-10 text-center px-6">
+        <h3 class="text-lg md:text-xl font-bold text-[#3a3a3a] mb-2">オシャレで旨い。</h3>
+        <p class="text-md text-[#5d4a3d] font-medium">心が躍る出張ビュッフェ専門店</p>
+      </div>
+    </main>
+  </body>
+</html>
