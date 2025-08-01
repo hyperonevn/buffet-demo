@@ -1,151 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <title>Hero Double Image – Mr.Buffet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: YuGothic, "游ゴシック", sans-serif;
-      background: #fff;
-      color: #2e2e2e;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .hero-half {
-      position: relative;
-      width: 50%;
-      height: 500px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-left {
-      background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv1.jpg');
-    }
-
-    .hero-right {
-      background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv2.jpg');
-    }
-
-    .hero-text {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      background-color: rgba(255,255,255,0.75);
-      padding: 20px;
-      max-width: 90%;
-      line-height: 1.6;
-    }
-
-    .hero-text h2 {
-      font-size: 28px;
-      margin: 0 0 10px;
-    }
-
-    .hero-text p {
-      font-size: 14px;
-      margin: 0 0 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: white;
-      border: 1px solid #444;
-      padding: 6px 20px;
-      text-decoration: none;
-      color: #2e2e2e;
-      font-weight: bold;
-      font-size: 14px;
-      border-radius: 20px;
-    }
-
-    .overlay-text {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      background: rgba(56,42,29,0.85);
-      color: white;
-      padding: 10px 15px;
-      font-size: 18px;
-      font-weight: bold;
-      line-height: 1.6;
-    }
-
-    .contact-bar {
-      background: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 16px;
-      font-weight: bold;
-      border-top: 1px solid #ddd;
-    }
-
-    .contact-bar a {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 10px 25px;
-      background: #fff;
-      border: 1px solid #2e2e2e;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: #2e2e2e;
-    }
-
-    @media screen and (max-width: 768px) {
-      .hero-half {
-        width: 100%;
-        height: 400px;
-      }
-
-      .hero-text h2 {
-        font-size: 22px;
-      }
-
-      .overlay-text {
-        font-size: 16px;
-        top: 10px;
-        left: 10px;
-      }
-    }
-  </style>
-</head>
 <body>
+  <div id="sidebar"></div>
+  <div id="topbar"></div>
+  <main>
+    <div id="hero"></div>
+    <div id="contact-bar"></div>
+  </main>
 
-  <div class="hero">
-    <!-- LEFT SIDE -->
-    <div class="hero-half hero-left">
-      <div class="hero-text">
-        <h2>ケータリング Mr.BUFFET</h2>
-        <p>スタッフ、テーブルセッティング付き本格ビュッフェ</p>
-        <p>※実施日の5日前までにご予約下さい</p>
-        <a href="#" class="btn">View More →</a>
-      </div>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="hero-half hero-right">
-      <div class="overlay-text">
-        オシャレで旨い。<br>心が躍る出張ビュッフェ専門店
-      </div>
-      <div class="hero-text" style="bottom: 20px;">
-        <h2>オードブル Hors d'oeuvre Mr.BUFFET</h2>
-        <p>絶品オートブルを使い捨て容器でデリバリー</p>
-        <p>※実施日の2日前までにご予約下さい</p>
-        <a href="#" class="btn">View More →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-bar">
-    お問い合わせはこちら<br>
-    <a href="#">お問い合わせはこちら →</a>
-  </div>
-
+  <script>
+    const loadHTML = async (id, file) => {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    };
+    loadHTML("sidebar", "partials/sidebar.html");
+    loadHTML("topbar", "partials/topbar.html");
+    loadHTML("hero", "partials/hero.html");
+    loadHTML("contact-bar", "partials/contact-bar.html");
+  </script>
 </body>
-</html>
