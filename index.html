@@ -1,36 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mr.BUFFET – ミスタービュッフェ</title>
+    <title>Buffet Clone – MrBuffet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         font-family: 'Yu Gothic', '游ゴシック', sans-serif;
         font-size: 14px;
       }
-
-      @media (max-width: 1024px) {
-        .desktop-only {
-          display: none !important;
-        }
-        .mobile-only {
-          display: block !important;
-        }
-      }
-
-      @media (min-width: 1025px) {
-        .mobile-only {
-          display: none !important;
-        }
-      }
     </style>
   </head>
 
   <body class="text-gray-800">
-    <!-- ✅ Sidebar Desktop -->
-    <aside class="desktop-only fixed top-0 left-0 w-[240px] h-screen bg-[#5d4a3d] text-white flex flex-col justify-between p-5 z-50 overflow-y-auto">
+    <!-- ✅ Sidebar -->
+    <aside class="fixed top-0 left-0 w-[240px] h-screen bg-[#5d4a3d] text-white flex flex-col justify-between p-5 z-50 overflow-y-auto">
       <!-- Logo -->
       <div class="text-center mb-6">
         <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/logo_kansai.png" alt="Mr.BUFFET logo" class="mx-auto" />
@@ -42,14 +28,17 @@
           <p class="text-[15px] mb-1">ケータリングメニュー</p>
         </div>
         <hr class="border-dashed border-t border-white mx-6" />
+
         <div class="text-center">
           <p class="text-[15px] leading-snug">オードブル<br />デリバリーメニュー</p>
         </div>
         <hr class="border-dashed border-t border-white mx-6" />
+
         <div class="text-center">
           <p class="text-[15px]">予算から選ぶ</p>
         </div>
         <hr class="border-dashed border-t border-white mx-6" />
+
         <div class="text-center">
           <p class="text-[15px]">シーンから選ぶ</p>
         </div>
@@ -57,7 +46,8 @@
 
       <!-- Contact info -->
       <div class="mt-10 text-center text-white text-sm">
-        <p class="mb-2 whitespace-nowrap">お気軽にご相談・お電話ください</p>
+      <p class="mb-2 whitespace-nowrap">お気軽にご相談・お電話ください</p>
+
         <p class="text-xl font-bold tracking-widest my-1">0120-846-413</p>
         <p>営業時間 09:00~21:00</p>
       </div>
@@ -72,7 +62,7 @@
         </div>
       </div>
 
-      <!-- Banner -->
+      <!-- Banner dưới cùng -->
       <div class="text-center space-y-4">
         <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/deff_banner.jpg" alt="バナー" class="w-full rounded" />
         <div class="text-center text-white text-xs opacity-70">
@@ -83,13 +73,15 @@
       </div>
     </aside>
 
-    <!-- ✅ Top Notice -->
-    <div class="desktop-only fixed top-0 left-[240px] w-[calc(100%-240px)] bg-[#2e261c] text-white text-[12.5px] text-center py-1 z-[99999]">
-      ホーチミンでケータリング・オードブルデリバリーなら <strong class="font-medium">MrBuffet</strong>～ミスタービュッフェ～
+    <!-- ✅ Top notice -->
+    <div class="fixed top-0 left-[240px] w-[calc(100%-240px)] bg-[#2e261c] text-white text-[12.5px] text-center py-1 z-[99999]">
+      ホーチミンでケータリング・オードブルデリバリーなら
+      <strong class="font-medium">MrBuffet</strong>～ミスタービュッフェ～
     </div>
 
-    <!-- ✅ Top Nav (desktop + mobile) -->
-    <nav class="fixed top-[32px] desktop-only left-[240px] w-[calc(100%-240px)] bg-white border-b border-gray-200 flex items-center justify-between text-[15px] font-bold z-[9999] py-2 px-4">
+    <!-- ✅ Navigation bar -->
+    <!-- ✅ Navigation bar -->
+    <nav class="fixed top-[32px] left-[240px] w-[calc(100%-240px)] bg-white border-b border-gray-200 flex items-center justify-between text-[15px] font-bold z-[9999] py-2 px-4">
       <div class="space-x-2">
         <a href="/about" class="text-gray-800 hover:text-black">私たちについて</a>｜
         <a href="/area" class="text-gray-800 hover:text-black">対応エリア</a>｜
@@ -103,32 +95,40 @@
       </div>
     </nav>
 
-    <!-- ✅ Mobile Header -->
-    <div class="mobile-only fixed top-0 left-0 w-full bg-[#5d4a3d] text-white z-50 flex justify-between items-center px-4 py-2">
-      <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/logo_kansai.png" class="h-8" alt="logo" />
-      <div class="space-x-3 text-lg">
-        <a href="tel:0120846413">📞</a>
-        <a href="#">📩</a>
-        <a href="#">☰</a>
-      </div>
-    </div>
-
     <!-- ✅ Main content -->
-    <main class="ml-[240px] desktop-only mt-[80px]">
-      <div class="grid grid-cols-1 md:grid-cols-2">
+    <main class="ml-[240px] mt-[80px] px-0 py-0 relative z-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 relative">
         <!-- Slide 1 -->
-        <section class="relative h-[500px] bg-cover bg-center" style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv1.jpg');">
-          <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/cateling/mv_txt.png" class="absolute top-6 left-6 w-[260px] md:w-[300px] z-20" />
+        <section
+          class="relative h-[500px] bg-cover bg-center"
+          style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv1.jpg');"
+        >
+          <!-- PNG chữ: góc trái trên -->
+          <img
+            src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/cateling/mv_txt.png"
+            alt="Catering Text"
+            class="absolute top-6 left-6 w-[260px] md:w-[300px] z-20"
+          />
+          <!-- Loang trắng góc TRÁI TRÊN -->
           <div class="absolute top-0 left-0 w-[300px] h-[140px] bg-gradient-to-br from-white via-white/80 to-transparent z-10"></div>
         </section>
 
         <!-- Slide 2 -->
-        <section class="relative h-[500px] bg-cover bg-center" style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv2.jpg');">
-          <img src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/delivery/mv_txt.png" class="absolute bottom-6 right-6 w-[260px] md:w-[300px] z-20" />
+        <section
+          class="relative h-[500px] bg-cover bg-center"
+          style="background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv2.jpg');"
+        >
+          <!-- PNG chữ: góc phải dưới -->
+          <img
+            src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/delivery/mv_txt.png"
+            alt="Delivery Text"
+            class="absolute bottom-6 right-6 w-[260px] md:w-[300px] z-20"
+          />
+          <!-- Loang trắng góc PHẢI DƯỚI -->
           <div class="absolute bottom-0 right-0 w-[300px] h-[140px] bg-gradient-to-tl from-white via-white/80 to-transparent z-10"></div>
         </section>
 
-        <!-- Center text -->
+        <!-- ✅ Chữ phủ chính giữa -->
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-center leading-relaxed hidden md:block">
           <p class="inline-block text-white text-[20px] md:text-[24px] font-bold bg-[#5d4a3d] px-6 py-2 mb-2 rounded-md shadow-md">
             オシャレで旨い。
@@ -140,7 +140,7 @@
         </div>
       </div>
 
-      <!-- Highlight -->
+      <!-- ✅ Highlight box -->
       <div class="bg-[#fffaf0] py-10 text-center px-6">
         <h3 class="text-lg md:text-xl font-bold text-[#3a3a3a] mb-2">オシャレで旨い。</h3>
         <p class="text-md text-[#5d4a3d] font-medium">心が躍る出張ビュッフェ専門店</p>
