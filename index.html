@@ -2,260 +2,150 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <title>Hero Double Image – Mr.Buffet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MrBuffet – Sidebar Demo</title>
   <style>
     body {
       margin: 0;
       font-family: YuGothic, "游ゴシック", sans-serif;
-      font-size: 14px;
+      background: #fff;
+      color: #2e2e2e;
     }
 
-    @media (min-width: 1025px) {
-      body {
-        margin-left: 240px;
-      }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    /* Sidebar */
-    .l-sidebar__list {
-      background: #5d4a3d;
-      width: 240px;
-      height: 100vh;
-      overflow-y: auto;
+    .hero-half {
+      position: relative;
+      width: 50%;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-left {
+      background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv1.jpg');
+    }
+
+    .hero-right {
+      background-image: url('https://buffet-catering.com/wp/wp-content/themes/buffet/img/home/mv2.jpg');
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      background-color: rgba(255,255,255,0.75);
       padding: 20px;
-      box-sizing: border-box;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-      border-right: 1px solid #ccc;
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    .hero-text h2 {
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      border: 1px solid #444;
+      padding: 6px 20px;
+      text-decoration: none;
+      color: #2e2e2e;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 20px;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background: rgba(56,42,29,0.85);
       color: white;
-    }
-
-    .l-sidebar-logo__img-wrap {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .l-sidebar-logo__img {
-      max-width: 100%;
-    }
-
-    .nav-list01 {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-list01__li {
-      margin-bottom: 24px;
-    }
-
-    .nav-list01__jp {
+      padding: 10px 15px;
+      font-size: 18px;
       font-weight: bold;
-      font-size: 15px;
-      color: #fff;
+      line-height: 1.6;
     }
 
-    .nav-list01__en {
-      font-family: "Allura", cursive;
-      font-size: 13px;
-      color: #f0e6d2;
-    }
-
-    .nav-sub__ttl,
-    .nav-sub-ttl,
-    .nav-sub__item {
-      margin-top: 10px;
-    }
-
-    .nav-sub-list {
-      padding-left: 0;
-      list-style: none;
-    }
-
-    .nav-sub-list__item {
-      display: block;
-      padding: 6px 0;
-      font-size: 13px;
-      color: #f8f8f8;
-      text-decoration: none;
-    }
-
-    .nav-sub-list__item:hover {
-      color: #ffd700;
-    }
-
-    .nav-divider {
-      border-top: 2px dotted #fff;
-      margin: 20px 0;
-    }
-
-    /* Banner */
-    .c-series-banner__item {
-      margin: 10px 0;
-    }
-
-    .c-series-banner__img img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-top: 5px;
-    }
-
-    .c-series-banner__cap {
-      font-size: 12px;
-      margin-top: 4px;
-      color: #f1f1f1;
-    }
-
-    .c-series-banner__ja {
+    .contact-bar {
+      background: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
       font-weight: bold;
-      font-size: 13px;
-      margin-top: 3px;
-      color: #fff;
+      border-top: 1px solid #ddd;
     }
 
-    .c-series-banner__en {
-      font-family: "Allura", cursive;
-      font-size: 13px;
-      color: #ffeebb;
-    }
-
-    /* Top info bars */
-    .notice-bar {
-      width: calc(100% - 240px);
-      background: #2e261c;
-      padding: 4px 0;
-      text-align: center;
-      color: #fff;
-      font-size: 12.5px;
-      font-family: YuGothic, "游ゴシック", sans-serif;
-      font-weight: normal;
-      z-index: 99999;
-      position: fixed;
-      top: 0;
-      left: 240px;
-      letter-spacing: 0.5px;
-      line-height: 1.4;
-    }
-
-    .nav-menu {
-      width: calc(100% - 240px);
-      background: #ffffff;
-      padding: 10px 0;
-      text-align: center;
-      color: #2e2e2e;
-      font-size: 15px;
-      font-family: YuGothic, "游ゴシック", Helvetica Neue, Arial, sans-serif;
-      z-index: 9999;
-      position: fixed;
-      top: 36px;
-      left: 240px;
-      border-bottom: 1px solid #ddd;
-      letter-spacing: 0.8px;
-      font-weight: 700;
-    }
-
-    .nav-menu a {
-      margin: 0 12px;
-      color: #2e2e2e;
+    .contact-bar a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 25px;
+      background: #fff;
+      border: 1px solid #2e2e2e;
+      border-radius: 9999px;
       text-decoration: none;
-      font-weight: 700;
+      color: #2e2e2e;
     }
 
-    /* Main content */
-    .main-content {
-      padding: 40px;
-      margin-top: 80px;
+    @media screen and (max-width: 768px) {
+      .hero-half {
+        width: 100%;
+        height: 400px;
+      }
+
+      .hero-text h2 {
+        font-size: 22px;
+      }
+
+      .overlay-text {
+        font-size: 16px;
+        top: 10px;
+        left: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="l-sidebar__list">
-    <h1 class="l-sidebar-logo__img-wrap">
-      <img class="l-sidebar-logo__img" src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/logo_kansai.png" alt="Mr.BUFFET logo">
-    </h1>
+  <div class="hero">
+    <!-- LEFT SIDE -->
+    <div class="hero-half hero-left">
+      <div class="hero-text">
+        <h2>ケータリング Mr.BUFFET</h2>
+        <p>スタッフ、テーブルセッティング付き本格ビュッフェ</p>
+        <p>※実施日の5日前までにご予約下さい</p>
+        <a href="#" class="btn">View More →</a>
+      </div>
+    </div>
 
-    <!-- Menu -->
-    <ul class="nav-list01">
-      <li class="nav-list01__li">
-        <div class="nav-list01__item">
-          <div class="nav-list01__jp">ケータリングメニュー</div>
-          <div class="nav-list01__en">Catering Menu</div>
-        </div>
-        <div class="nav-sub">
-          <div class="nav-sub__ttl">
-            <div class="nav-sub-ttl__jp">ケータリング メニュー</div>
-            <div class="nav-sub-ttl__en">Catering Menu</div>
-          </div>
-          <div class="nav-sub__item">
-            <ul class="nav-sub-list">
-              <li><a href="#" class="nav-sub-list__item">ケータリングプラン一覧</a></li>
-              <li><a href="#" class="nav-sub-list__item">ドリンクプラン</a></li>
-              <li><a href="#" class="nav-sub-list__item">オプションサービス</a></li>
-            </ul>
-          </div>
-
-          <div class="c-series-banner__item">
-            <a href="#" class="c-series-banner__link">
-              <div class="c-series-banner__en">Finger food</div>
-              <div class="c-series-banner__cap">フィンガーフード中心の華やかなシリーズ</div>
-              <div class="c-series-banner__ja">フィンガーフードシリーズ</div>
-              <div class="c-series-banner__img">
-                <img src="https://buffet-catering.com/wp/wp-content/uploads/2025/02/Finger-Food-Sushi%E3%80%80%E6%A5%BD%E3%80%80GAKU%E3%80%809%E5%93%81%EF%BC%89.webp" alt="Finger food image">
-              </div>
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="nav-divider"></div>
-
-    <ul class="nav-list01">
-      <li class="nav-list01__li">
-        <div class="nav-list01__item">
-          <div class="nav-list01__jp">オードブルデリバリーメニュー</div>
-          <div class="nav-list01__en">Delivery Menu</div>
-        </div>
-        <div class="nav-sub">
-          <div class="nav-sub__ttl">
-            <div class="nav-sub-ttl__jp">オードブルメニュー</div>
-            <div class="nav-sub-ttl__en">Delivery Menu</div>
-          </div>
-          <div class="nav-sub__item">
-            <ul class="nav-sub-list">
-              <li><a href="#" class="nav-sub-list__item">デリバリープラン一覧</a></li>
-              <li><a href="#" class="nav-sub-list__item">ドリンクプラン</a></li>
-              <li><a href="#" class="nav-sub-list__item">オプションフード</a></li>
-            </ul>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <!-- RIGHT SIDE -->
+    <div class="hero-half hero-right">
+      <div class="overlay-text">
+        オシャレで旨い。<br>心が躍る出張ビュッフェ専門店
+      </div>
+      <div class="hero-text" style="bottom: 20px;">
+        <h2>オードブル Hors d'oeuvre Mr.BUFFET</h2>
+        <p>絶品オートブルを使い捨て容器でデリバリー</p>
+        <p>※実施日の2日前までにご予約下さい</p>
+        <a href="#" class="btn">View More →</a>
+      </div>
+    </div>
   </div>
 
-  <!-- ✅ Thay cho add_action('wp_body_open', ...) -->
-  <div class="notice-bar">
-    ホーチミンでケータリング・オードブルデリバリーなら
-    <strong style="font-weight:500;">MrBuffet</strong>～ミスタービュッフェ～
+  <div class="contact-bar">
+    お問い合わせはこちら<br>
+    <a href="#">お問い合わせはこちら →</a>
   </div>
 
-  <div class="nav-menu">
-    <a href="/about">私たちについて</a>｜
-    <a href="/area">対応エリア</a>｜
-    <a href="/guide">ご利用ガイド</a>｜
-    <a href="/faq">よくある質問</a>
-  </div>
-
-  <!-- Nội dung chính -->
-  <main class="main-content">
-    <h1>📦 Nội dung chính</h1>
-    <p>Ví dụ: danh sách sản phẩm, khu vực giao hàng, lời chào,...</p>
-  </main>
 </body>
 </html>
