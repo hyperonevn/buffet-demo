@@ -1,93 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buffet Catering Demo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MrBuffet – Sidebar Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: YuGothic, "游ゴシック", sans-serif;
+      font-size: 14px;
+    }
+
+    @media (min-width: 1025px) {
+      body {
+        margin-left: 240px;
+      }
+    }
+
+    /* Sidebar */
+    .l-sidebar__list {
+      background: #5d4a3d;
+      width: 240px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      border-right: 1px solid #ccc;
+      color: white;
+    }
+
+    .l-sidebar-logo__img-wrap {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .l-sidebar-logo__img {
+      max-width: 100%;
+    }
+
+    .nav-list01 {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list01__li {
+      margin-bottom: 24px;
+    }
+
+    .nav-list01__jp {
+      font-weight: bold;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .nav-list01__en {
+      font-family: "Allura", cursive;
+      font-size: 13px;
+      color: #f0e6d2;
+    }
+
+    .nav-sub__ttl,
+    .nav-sub-ttl,
+    .nav-sub__item {
+      margin-top: 10px;
+    }
+
+    .nav-sub-list {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .nav-sub-list__item {
+      display: block;
+      padding: 6px 0;
+      font-size: 13px;
+      color: #f8f8f8;
+      text-decoration: none;
+    }
+
+    .nav-sub-list__item:hover {
+      color: #ffd700;
+    }
+
+    .nav-divider {
+      border-top: 2px dotted #fff;
+      margin: 20px 0;
+    }
+
+    /* Banner */
+    .c-series-banner__item {
+      margin: 10px 0;
+    }
+
+    .c-series-banner__img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .c-series-banner__cap {
+      font-size: 12px;
+      margin-top: 4px;
+      color: #f1f1f1;
+    }
+
+    .c-series-banner__ja {
+      font-weight: bold;
+      font-size: 13px;
+      margin-top: 3px;
+      color: #fff;
+    }
+
+    .c-series-banner__en {
+      font-family: "Allura", cursive;
+      font-size: 13px;
+      color: #ffeebb;
+    }
+
+    /* Top info bars */
+    .notice-bar {
+      width: calc(100% - 240px);
+      background: #2e261c;
+      padding: 4px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 12.5px;
+      font-family: YuGothic, "游ゴシック", sans-serif;
+      font-weight: normal;
+      z-index: 99999;
+      position: fixed;
+      top: 0;
+      left: 240px;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    .nav-menu {
+      width: calc(100% - 240px);
+      background: #ffffff;
+      padding: 10px 0;
+      text-align: center;
+      color: #2e2e2e;
+      font-size: 15px;
+      font-family: YuGothic, "游ゴシック", Helvetica Neue, Arial, sans-serif;
+      z-index: 9999;
+      position: fixed;
+      top: 36px;
+      left: 240px;
+      border-bottom: 1px solid #ddd;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+    }
+
+    .nav-menu a {
+      margin: 0 12px;
+      color: #2e2e2e;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Main content */
+    .main-content {
+      padding: 40px;
+      margin-top: 80px;
+    }
+  </style>
 </head>
-<body class="font-sans pt-16 leading-normal tracking-normal">
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white shadow z-10">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <h1 class="text-xl font-bold">Buffet Catering</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-gray-600">Home</a></li>
-                    <li><a href="#concept" class="hover:text-gray-600">Concept</a></li>
-                    <li><a href="#plan" class="hover:text-gray-600">Plan</a></li>
-                    <li><a href="#access" class="hover:text-gray-600">Access</a></li>
-                    <li><a href="#contact" class="hover:text-gray-600">Contact</a></li>
-                </ul>
-            </nav>
+<body>
+
+  <!-- Sidebar -->
+  <div class="l-sidebar__list">
+    <h1 class="l-sidebar-logo__img-wrap">
+      <img class="l-sidebar-logo__img" src="https://buffet-catering.com/wp/wp-content/themes/buffet/img/common/logo_kansai.png" alt="Mr.BUFFET logo">
+    </h1>
+
+    <!-- Menu -->
+    <ul class="nav-list01">
+      <li class="nav-list01__li">
+        <div class="nav-list01__item">
+          <div class="nav-list01__jp">ケータリングメニュー</div>
+          <div class="nav-list01__en">Catering Menu</div>
         </div>
-    </header>
+        <div class="nav-sub">
+          <div class="nav-sub__ttl">
+            <div class="nav-sub-ttl__jp">ケータリング メニュー</div>
+            <div class="nav-sub-ttl__en">Catering Menu</div>
+          </div>
+          <div class="nav-sub__item">
+            <ul class="nav-sub-list">
+              <li><a href="#" class="nav-sub-list__item">ケータリングプラン一覧</a></li>
+              <li><a href="#" class="nav-sub-list__item">ドリンクプラン</a></li>
+              <li><a href="#" class="nav-sub-list__item">オプションサービス</a></li>
+            </ul>
+          </div>
 
-    <!-- Hero -->
-    <section class="h-screen bg-cover bg-center flex items-center justify-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80');">
-        <div class="bg-black bg-opacity-50 p-8 rounded">
-            <h2 class="text-white text-4xl md:text-5xl font-bold text-center">Delicious Buffet Experience</h2>
+          <div class="c-series-banner__item">
+            <a href="#" class="c-series-banner__link">
+              <div class="c-series-banner__en">Finger food</div>
+              <div class="c-series-banner__cap">フィンガーフード中心の華やかなシリーズ</div>
+              <div class="c-series-banner__ja">フィンガーフードシリーズ</div>
+              <div class="c-series-banner__img">
+                <img src="https://buffet-catering.com/wp/wp-content/uploads/2025/02/Finger-Food-Sushi%E3%80%80%E6%A5%BD%E3%80%80GAKU%E3%80%809%E5%93%81%EF%BC%89.webp" alt="Finger food image">
+              </div>
+            </a>
+          </div>
         </div>
-    </section>
+      </li>
+    </ul>
 
-    <!-- Language Toggle -->
-    <div class="container mx-auto mt-8 flex justify-center space-x-4">
-        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="en">EN</button>
-        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="jp">JP</button>
-        <button class="lang-btn px-4 py-2 bg-gray-200 rounded" data-lang="vi">VI</button>
-    </div>
+    <div class="nav-divider"></div>
 
-    <!-- Content Sections -->
-    <main id="content" class="container mx-auto px-4 py-8 space-y-12">
-        <section id="concept" class="text-center space-y-4">
-            <h3 class="text-2xl font-semibold">Concept</h3>
-            <p class="lang en">Enjoy a variety of dishes carefully prepared with seasonal ingredients.</p>
-            <p class="lang jp hidden">季節の食材を使った多彩な料理をお楽しみください。</p>
-            <p class="lang vi hidden">Thưởng thức nhiều món ăn ngon được chế biến từ nguyên liệu theo mùa.</p>
-        </section>
+    <ul class="nav-list01">
+      <li class="nav-list01__li">
+        <div class="nav-list01__item">
+          <div class="nav-list01__jp">オードブルデリバリーメニュー</div>
+          <div class="nav-list01__en">Delivery Menu</div>
+        </div>
+        <div class="nav-sub">
+          <div class="nav-sub__ttl">
+            <div class="nav-sub-ttl__jp">オードブルメニュー</div>
+            <div class="nav-sub-ttl__en">Delivery Menu</div>
+          </div>
+          <div class="nav-sub__item">
+            <ul class="nav-sub-list">
+              <li><a href="#" class="nav-sub-list__item">デリバリープラン一覧</a></li>
+              <li><a href="#" class="nav-sub-list__item">ドリンクプラン</a></li>
+              <li><a href="#" class="nav-sub-list__item">オプションフード</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-        <section id="plan" class="text-center space-y-4">
-            <h3 class="text-2xl font-semibold">Plan</h3>
-            <p class="lang en">Choose from affordable plans tailored for any event.</p>
-            <p class="lang jp hidden">様々なイベントに合わせたお得なプランをご用意しています。</p>
-            <p class="lang vi hidden">Chọn những gói ưu đãi phù hợp với mọi sự kiện.</p>
-        </section>
+  <!-- ✅ Thay cho add_action('wp_body_open', ...) -->
+  <div class="notice-bar">
+    ホーチミンでケータリング・オードブルデリバリーなら
+    <strong style="font-weight:500;">MrBuffet</strong>～ミスタービュッフェ～
+  </div>
 
-        <section id="access" class="text-center space-y-4">
-            <h3 class="text-2xl font-semibold">Access</h3>
-            <p class="lang en">Located just five minutes from the station.</p>
-            <p class="lang jp hidden">駅から徒歩5分の好立地です。</p>
-            <p class="lang vi hidden">Cách ga tàu chỉ 5 phút đi bộ.</p>
-        </section>
+  <div class="nav-menu">
+    <a href="/about">私たちについて</a>｜
+    <a href="/area">対応エリア</a>｜
+    <a href="/guide">ご利用ガイド</a>｜
+    <a href="/faq">よくある質問</a>
+  </div>
 
-        <section id="contact" class="text-center space-y-4">
-            <h3 class="text-2xl font-semibold">Contact</h3>
-            <p class="lang en">Feel free to reach out with inquiries.</p>
-            <p class="lang jp hidden">お問い合わせはお気軽にご連絡ください。</p>
-            <p class="lang vi hidden">Hãy liên hệ với chúng tôi nếu có thắc mắc.</p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-100 text-center py-4">
-        <p>&copy; 2024 Buffet Catering</p>
-    </footer>
-
-    <script>
-        const buttons = document.querySelectorAll('.lang-btn');
-        const texts = document.querySelectorAll('.lang');
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
-                texts.forEach(t => {
-                    if (t.classList.contains(lang)) {
-                        t.classList.remove('hidden');
-                    } else {
-                        t.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
+  <!-- Nội dung chính -->
+  <main class="main-content">
+    <h1>📦 Nội dung chính</h1>
+    <p>Ví dụ: danh sách sản phẩm, khu vực giao hàng, lời chào,...</p>
+  </main>
 </body>
 </html>
